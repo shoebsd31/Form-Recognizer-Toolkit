@@ -8,6 +8,8 @@ import { DocumentStatus } from "store/documents/documentsTypes";
 import { defaultStyler } from "utils/styler";
 import { AnalyzeProgressBar } from "view/components/analyzeProgressBar/analyzeProgressBar";
 import { DrawRegionButton } from "view/components/buttons/buttons";
+import { DrawAnlaysisButton } from "view/components/buttons/buttons";
+
 import { ImageMap } from "view/components/imageMap/imageMap";
 import ImageMapToolbar from "view/components/imageMapToolbar/imageMapToolbar";
 import LayerFilter, { ILayerCheckStates } from "view/components/layerFilter/layerFilter";
@@ -148,6 +150,11 @@ export class LabelCanvas extends React.PureComponent<LabelCanvasProps, ILabelCan
             <div className="label-canvas">
                 <div className="label-canvas-command-bar">
                     <DrawRegionButton
+                        onClick={this.handleDrawRegion}
+                        disabled={isButtonDisabled}
+                        checked={drawRegionMode}
+                    />
+                    <DrawAnlaysisButton
                         onClick={this.handleDrawRegion}
                         disabled={isButtonDisabled}
                         checked={drawRegionMode}

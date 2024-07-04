@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  server:
+    build: .
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/server
+      - ./logs:/server/logs
+      - ./.env:/server/.env
+    environment:
+      - NODE_ENV=development
+
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - ./logs:/app/logs
+      - ./.env:/app/.env
+    environment:
+      - NODE_ENV=development
