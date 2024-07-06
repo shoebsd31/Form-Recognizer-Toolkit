@@ -55,7 +55,11 @@ export const DrawRegionButton = (props: { onClick: () => void; disabled: boolean
     );
 };
 
-export const DrawAnlaysisButton = (props: { onClick: () => void; disabled: boolean; checked: boolean }): JSX.Element => {
+export const DrawAnlaysisButton = (props: {
+    onClick: () => void;
+    disabled: boolean;
+    checked: boolean;
+}): JSX.Element => {
     return (
         <DefaultButton
             iconProps={{ iconName: "SingleColumnEdit" }}
